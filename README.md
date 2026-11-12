@@ -1,6 +1,6 @@
 # Not This Tile? helper for Aion 2
 
-A memory aid for **"Not This Tile?"**, a Shugo Festival minigame in Aion 2.
+A memory aid for "Not This Tile?", a Shugo Festival minigame in Aion 2.
 
 Each round, the trap tiles flash red for a second or two and the safe tiles stay blue. Then the whole floor
 turns blue again, and you have to remember where the safe tiles were. This helper takes a picture of that
@@ -27,7 +27,7 @@ python notthistile_helper.py
 Or double-click `start_helper.bat`. If the helper is already running, it closes that copy first, so you
 can also use it to restart.
 
-Run Aion 2 in **borderless windowed** mode. Windows can't draw on top of exclusive fullscreen.
+Run Aion 2 in borderless windowed mode. Windows can't draw on top of exclusive fullscreen.
 
 ## The control window
 
@@ -38,22 +38,22 @@ Run Aion 2 in **borderless windowed** mode. Windows can't draw on top of exclusi
 | Window for second monitor | A normal picture window. The first time, it opens on your other monitor. |
 | Game is on | Which monitor the game is on. The default is your main one. |
 
-Closing a picture window just turns that switch off. Closing the control window quits the helper. Your
-choices and window positions are saved in `settings.json`.
+Closing a picture window just turns that switch off. Closing the control window quits the helper. The
+helper saves your choices and window positions in `settings.json`.
 
-If screen capture stops, for example while the game is starting, the status line says **"Screen capture
-stopped!"**. The helper keeps trying on its own.
+If screen capture stops, for example while the game is starting, the status line says "Screen capture
+stopped!". The helper keeps trying on its own.
 
 ## Reading the picture
 
-Tiles are named **as they appear in the picture**. If you turn the camera, the names turn with it.
+Tiles are named as they appear in the picture. If you turn the camera, the names turn with it.
 
-- Columns are letters, **A, B, C...**, from left to right along the far edge.
-- Rows are numbers, **1, 2, 3...**, starting from the **far** edge and coming towards you.
+- Columns are letters, A, B, C..., from left to right along the far edge.
+- Rows are numbers, 1, 2, 3..., starting from the far edge and coming towards you.
 - Every safe (blue) tile gets its name, such as `C4`.
 
 Rows count from the far edge because the near rows are often hidden behind the skill bar or below the
-screen. Hidden rows simply get no names.
+screen. Hidden rows get no names.
 
 The helper only names tiles when it's sure. Otherwise you'll see one of these notes:
 
@@ -70,7 +70,7 @@ A safe tile with a player standing on it may get no name.
 Each round picks its safe tiles from a few fixed layouts. The helper knows 23 of them, listed in
 `layouts.json`. When the tiles it read fit exactly one of them, it:
 
-- names the safe tiles it couldn't see, in **yellow** (under a player, behind the skill bar), and
+- names the safe tiles it couldn't see, in yellow (under a player, behind the skill bar), and
 - lists the whole layout above the picture, for example `Known layout: B1 C4 F4 G8 I8 K9`. That includes
   tiles below the bottom of your screen.
 
@@ -78,27 +78,28 @@ It needs at least two safe tiles first. It also has to be sure: every tile it re
 none of the layout's tiles may have read as red, and no other layout may fit. This works with the camera
 turned too.
 
-Found a layout that isn't in the list? Add a line to `layouts.json` with the round, the grid size and the safe
+To add a new layout, add a line to `layouts.json` with the round, the grid size and the safe
 tiles. Name the tiles with the camera facing the usual way. `helper.log` lists the tiles read for each round,
 and `snapshots/` has the pictures to check them against.
 
 ## Tips
 
-- **Zoom out before the late rounds.** Round 8 is 14 columns by 10 rows. The far edge and both far corners
+- Zoom out before the late rounds. Round 8 is 14 columns by 10 rows, and the far edge and both far corners
   must be on screen during the flash. The near edge can go off-screen.
-- **Hide the game's HUD** during the minigame, or keep the grid above the skill bar.
-- **Keep other overlays away from the grid.** A covered corner means no names that round.
-- **Try not to turn the camera between the flash and moving.** The picture is taken from your camera angle,
-  so it's easiest to match when the view hasn't changed.
+- Hide the game's HUD during the minigame, or keep the grid above the skill bar.
+- Keep other overlays away from the grid. If one covers a corner, that round gets no names.
+- Try not to turn the camera between the flash and moving. The picture shows your camera angle at the
+  flash, so it's easiest to match while the view is the same.
 - The picture appears as soon as the flash starts. The names follow a moment later.
-- The picture updates again at "Here's the answer", when the game shows the same tiles again. That's expected.
+- The picture updates again at "Here's the answer", because the game shows the same tiles again.
 - Something big and red outside the minigame, like lava or a red skill effect, can trigger a picture. It
   gets no names, and the next real round replaces it.
 
 ## Screen resolution
 
-Tested from 720p to 4K. The 1080p and 1440p results come from real games. The others were simulated by
-scaling 1440p recordings of four games (64 reveals, counting each round's flash and its answer).
+The helper has been used in real games at 1080p and 1440p. For the table, four 1440p recordings were scaled
+to each size and replayed: 64 reveals, counting each round's flash and its answer. 4K was scaled up, which
+adds no detail, so that row mainly shows nothing breaks at a larger size.
 
 | Resolution | Frames read | Known layout matched | Reveals with a known layout |
 |---|---|---|---|
@@ -108,14 +109,14 @@ scaling 1440p recordings of four games (64 reveals, counting each round's flash 
 | 900p | 660 | 656 | 56 of 64 |
 | 720p | 656 | 651 | 56 of 64 |
 
-No frame matched the wrong layout at any size. A real game at a low resolution looks rougher than a scaled
-recording, and the UI takes up more of the screen. So at 720p, hiding the HUD matters more.
+No frame matched the wrong layout at any size. A game running at 720p looks rougher than a scaled
+recording, and its UI covers more of the screen, so hiding the HUD matters more there.
 
 ## Troubleshooting
 
 The helper writes to `helper.log` next to the script: errors, and how it read each round. The log is capped
-at 1 MB, and the older part moves to `helper.log.1`. The newest picture of each round is saved in
-`snapshots/`. Only the last 40 are kept, and they're cleared each time the helper starts.
+at 1 MB, and the older part moves to `helper.log.1`. It also saves the newest picture of each round in
+`snapshots/`, keeps the last 40, and clears them each time it starts.
 
 You can also replay a recording instead of watching the screen:
 
