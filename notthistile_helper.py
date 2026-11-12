@@ -14,6 +14,7 @@ import base64
 import ctypes
 import json
 import logging
+import sys
 import threading
 import time
 import tkinter as tk
@@ -25,9 +26,11 @@ import cv2
 import mss
 import numpy as np
 
-SETTINGS_FILE = Path(__file__).with_name("settings.json")
-LOG_FILE = Path(__file__).with_name("helper.log")
-SNAP_DIR = Path(__file__).with_name("snapshots")  # newest raw snapshot of each reveal, for checking afterwards
+# The folder the helper runs from: next to the script, or next to NotThisTile.exe in the packaged version.
+APP_DIR = Path(sys.executable if getattr(sys, "frozen", False) else __file__).parent
+SETTINGS_FILE = APP_DIR / "settings.json"
+LOG_FILE = APP_DIR / "helper.log"
+SNAP_DIR = APP_DIR / "snapshots"  # newest raw snapshot of each reveal, for checking afterwards
 STALLED_TEXT = "Screen capture stopped! See helper.log."
 DEFAULTS = {
     "enabled": True,
@@ -43,7 +46,7 @@ CAPTURE_FPS = 15
 # 12x10, 12x10 and 14x10.
 GRID_SIZES = [(6, 6), (8, 8), (10, 8), (10, 10), (12, 10), (14, 10)]
 RECT = 960  # side of the flattened top-down grid used for measuring
-LAYOUTS_FILE = Path(__file__).with_name("layouts.json")
+LAYOUTS_FILE = APP_DIR / "layouts.json"
 
 
 def load_layouts():

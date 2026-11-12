@@ -12,20 +12,38 @@ It only reads what's on your screen, the same way recording software does. More 
 
 ## Setup
 
-You need Windows and Python 3. Install the three libraries once:
+The helper runs on Windows. There are two ways to get it.
 
-```bash
-pip install numpy opencv-python mss
-```
+### Option 1: the ready-made version (no Python needed)
 
-Then start the helper from this folder:
+1. [Download NotThisTile.zip](https://github.com/disreconnected/aion2-not-this-tile/releases/latest/download/NotThisTile.zip).
+2. Right-click the zip and choose Extract All. Put the folder on your Desktop or in Documents. The helper
+   saves its settings and pictures in its own folder, and Windows doesn't allow that in Program Files.
+3. Open the folder and double-click `NotThisTile.exe`.
+4. The first time, Windows may say "Windows protected your PC". It says that about programs that aren't
+   signed with a paid certificate, and this one isn't. Click More info, then Run anyway. Some antivirus
+   programs flag it for the same reason.
 
-```bash
-python notthistile_helper.py
-```
+Run only one copy at a time. To restart it, close the control window and open the exe again.
 
-Or double-click `start_helper.bat`. If the helper is already running, it closes that copy first, so you
-can also use it to restart.
+To update, download the zip again. If only new layouts were added, replacing `layouts.json` in your folder
+is enough.
+
+### Option 2: run it with Python
+
+Use this if you'd rather not run a downloaded exe, or you want to change the code.
+
+1. Install Python from [python.org](https://www.python.org/downloads/). If the installer shows an
+   "Add python.exe to PATH" box, tick it.
+2. At the top of this page, click the green Code button, then Download ZIP. Extract it as in step 2 above.
+3. Double-click `install.bat`. It installs the three libraries the helper needs. You only do this once.
+4. Double-click `start_helper.bat`. If the helper is already running, it closes that copy first, so you
+   can also use it to restart.
+
+From a terminal, the same thing is `pip install numpy opencv-python mss`, then
+`python notthistile_helper.py`.
+
+### Before you play
 
 Run Aion 2 in borderless windowed mode. Windows can't draw on top of exclusive fullscreen.
 
@@ -116,7 +134,7 @@ recording, and its UI covers more of the screen, so hiding the HUD matters more 
 
 ## Troubleshooting
 
-The helper writes to `helper.log` next to the script: errors, and how it read each round. The log is capped
+The helper writes to `helper.log` in its folder: errors, and how it read each round. The log is capped
 at 1 MB, and the older part moves to `helper.log.1`. It also saves the newest picture of each round in
 `snapshots/`, keeps the last 40, and clears them each time it starts.
 
