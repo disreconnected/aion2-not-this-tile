@@ -42,7 +42,7 @@ DEFAULTS = {
 }
 RED_THRESHOLD = 0.04  # share of red pixels in the screen centre; ~0.005 normally, 0.11-0.46 in a reveal
 CAPTURE_FPS = 15
-# (columns, rows) per round, the same in all nine recorded games: rounds 1-8 are 6x6, 8x8, 10x8, 10x8, 10x10,
+# (columns, rows) per round, the same in all ten recorded games: rounds 1-8 are 6x6, 8x8, 10x8, 10x8, 10x10,
 # 12x10, 12x10 and 14x10.
 GRID_SIZES = [(6, 6), (8, 8), (10, 8), (10, 10), (12, 10), (14, 10)]
 RECT = 960  # side of the flattened top-down grid used for measuring

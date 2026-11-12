@@ -26,14 +26,15 @@ Red tile: Incorrect, lose points.
 | Round | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 |
 |---|---|---|---|---|---|---|---|---|
 | Columns × rows | 6×6 | 8×8 | 10×8 | 10×8 | 10×10 | 12×10 | 12×10 | 14×10 |
-| Safe tiles | 6–7 | 8 | 8 | 7 | 6–7 | 5–6 | 6 | 4 |
+| Safe tiles | 6–7 | 8 | 8 | 7 | 7 | 5–6 | 6 | 4 |
 
-The sizes were the same in all nine recorded games (2026-11-10 00-02-13, 15-00-55, 23-02-38, 2026-11-11
-00-03-00, 01-01-45, 12-02-59, 23-02-50 and 2026-11-12 00-02-52, 12-03-00). An earlier note here said rounds 7 and 8 of 15-00-55 were both 14 columns; that
+The sizes were the same in all ten recorded games (2026-11-10 00-02-13, 15-00-55, 23-02-38, 2026-11-11
+00-03-00, 01-01-45, 12-02-59, 23-02-50 and 2026-11-12 00-02-52, 12-03-00, 23-02-58). An earlier note here said rounds 7 and 8 of 15-00-55 were both 14 columns; that
 was a miscount (round 7 was 12).
 **Layouts repeat between games:** each round picks from a small set of 2–3 layouts. The 23 seen so far are in
-`layouts.json`. Every reveal in the nine recordings fits exactly one of them. Round 7 of 15-00-55 showed only 4
-of its tiles (two were behind the skill bar); 2026-11-12 12-03-00 showed all six. Three reads were taken with the camera
+`layouts.json`. Every reveal in the ten recordings fits exactly one of them. Round 7 of 15-00-55 showed only 4
+of its tiles (two were behind the skill bar); 2026-11-12 12-03-00 showed all six. Likewise, the round 5 layout B2 C7 E4 H3 H8 I7 was
+missing C10 until 23-02-58 showed row 10. Three reads were taken with the camera
 turned a quarter turn (23-02-38 round 2; 01-01-45 rounds 2 and 3) and still fit, turned. Tiles that players stood on were found from
 the best blue coverage of each cell across all frames of the reveal and its answer.
 

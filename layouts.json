@@ -15,7 +15,7 @@
     {"round": 4, "size": "10x8", "safe": "B7 C3 E6 F2 G6 H3 I6"},
     {"round": 5, "size": "10x10", "safe": "B8 C5 E2 E6 F9 G3 I8"},
     {"round": 5, "size": "10x10", "safe": "B3 B6 C9 E7 F2 H5 I8"},
-    {"round": 5, "size": "10x10", "safe": "B2 C7 E4 H3 H8 I7"},
+    {"round": 5, "size": "10x10", "safe": "B2 C7 C10 E4 H3 H8 I7"},
     {"round": 6, "size": "12x10", "safe": "C2 C8 D5 H6 I3 K2"},
     {"round": 6, "size": "12x10", "safe": "C5 D3 D7 H5 J8"},
     {"round": 6, "size": "12x10", "safe": "C8 E3 H9 I3 J7 L5"},
