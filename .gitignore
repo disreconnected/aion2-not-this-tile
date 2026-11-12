@@ -1,0 +1,6 @@
+# Written by the helper while it runs: screenshots of your screen, your log and your window positions.
+snapshots/
+helper.log
+helper.log.*
+settings.json
+__pycache__/
