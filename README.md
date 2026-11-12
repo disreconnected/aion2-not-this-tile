@@ -65,6 +65,8 @@ The helper only names tiles when it's sure. Otherwise you'll see one of these no
 
 A safe tile with a player standing on it may get no name.
 
+Understand that in the later rounds, the grid won't fully fit on the screen so it will throw the "Grid cut off" error; this is not a bug, this is a current limitation.
+
 ## Known layouts
 
 Each round picks its safe tiles from a few fixed layouts. The helper knows 23 of them, listed in
